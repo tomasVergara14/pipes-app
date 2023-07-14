@@ -31,7 +31,7 @@ export class MenuComponent  implements OnInit {
         },
         {
           label: 'Personalized pipes',
-          icon: 'pi pi-cog'
+          icon: 'pi pi-cog',
         }
       ];
   }
