@@ -1,1 +1,63 @@
-<p>numbers-page works!</p>
+<p-panel class="m-1" header="Number Pipes" >
+    <p>Angular pipes - Common module </p>
+</p-panel>
+
+<div class="grid">
+
+    <div class="col-12 md:col-6">
+        <p-card header="number">
+            <ul>
+                <li>totalSells | number : '1.2-2' </li>
+                <li>totalSells | number : '1.2-4' </li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-card header="number">
+            <ul>
+                <li>{{ totalSells | number : '1.2-2' }}</li>
+                <li>{{ totalSells | number : '1.2-4' }}</li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-card header="currency">
+            <ul>
+                <li>totalSells | currency:'ARS': 'symbol-narrow' :'1.2-2' </li>
+                <li>totalSells | currency:'ARS': 'symbol-narrow' :'1.2-4' </li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-card header="currency">
+            <ul>
+                <li>{{ totalSells | currency:'ARS': 'symbol-narrow' :'1.2-2' }}</li>
+                <li>{{ totalSells | currency:'ARS': 'symbol-narrow': '1.2-4' }}</li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-card header="percent">
+            <ul>
+                <li>percent | percent  </li>
+                <li>percent | percent : '1.0-0'  </li>
+                <li>percent | percent : '1.2-2'  </li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-card header="percent">
+            <ul>
+                <li>{{ percent | percent }}</li>
+                <li>{{ percent | percent: '1.0-0' }}</li>
+                <li>{{ percent | percent: '1.2-2' }}</li>
+            </ul>
+        </p-card>
+    </div>
+
+</div>
