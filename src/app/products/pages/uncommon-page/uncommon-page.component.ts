@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval, Observable } from 'rxjs'
 
 @Component({
   selector: 'app-uncommon-page',
@@ -28,6 +29,8 @@ export class UncommonPageComponent {
     age: 27,
     city: 'Cba'
   }
+
+  public myObservableTimer:Observable<number> = interval(1000)
 
   changeClient(){
     this.name = 'Melissa';
