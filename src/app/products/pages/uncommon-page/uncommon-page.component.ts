@@ -23,6 +23,12 @@ export class UncommonPageComponent {
     other: 'tenemos # clientes esperando'
   }
 
+  public person:{}={
+    name: 'Tomas',
+    age: 27,
+    city: 'Cba'
+  }
+
   changeClient(){
     this.name = 'Melissa';
     this.gender = 'female';
