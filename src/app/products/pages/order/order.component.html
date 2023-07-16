@@ -4,5 +4,68 @@
 
 <p-fieldset legend="Custom pipes" [toggleable]="true" class="col-12 md:col-4">
     <p> testing custom pipes</p>
-    <pre> text to test: {{ 'toggleable' | toggleCase }} </pre>
+    <pre> text to test: {{ 'toggleable' | toggleCase: isUpperCase }} </pre>
 </p-fieldset>
+
+
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+        <p-button 
+            label="ToogleCase" 
+            icon="pi pi-search" 
+            class="mr-2"
+            (click)="toggleValue()"
+        ></p-button>
+    </div>
+    <div class="p-toolbar-group-end">
+
+        <p-button 
+            class="m-2" 
+            label="By name" 
+            icon="pi pi-sort" 
+            styleClass="p-button-success"
+            (click)="sortByBtn('name')"
+        ></p-button>
+
+        <p-button 
+            class="m-2" 
+            label="By color" 
+            icon="pi pi-sort" 
+            styleClass="p-button-warning"
+            (click)="sortByBtn('color')"
+        ></p-button>
+
+        <p-button 
+            class="m-2" 
+            label="By fly" 
+            icon="pi pi-sort" 
+            styleClass="p-button-danger"
+            (click)="sortByBtn('canFly')"
+        ></p-button>
+    </div>
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-2">
+        
+        <p-panel header="Heroes">
+                <p-table [value]="heroes | sortBy: sortByValue" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Fly</th>
+                            <th>Color</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-hero>
+                        <tr>
+                            <td>{{ hero.name }}</td>
+                            <td>{{ hero.canFly | canFly}}</td>
+                            <td>{{ hero.color }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+        </p-panel>
+
+    </div>
+</div>
